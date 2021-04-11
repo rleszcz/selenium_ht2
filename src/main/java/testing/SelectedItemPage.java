@@ -9,10 +9,10 @@ import org.openqa.selenium.support.PageFactory;
 public class SelectedItemPage extends BasePage {
 
     @FindBy(id = "add-to-cart-button")
-    public static WebElement ADD_TO_CART_BUTTON;
+    private static WebElement ADD_TO_CART_BUTTON;
 
     @FindBy(id = "attach-sidesheet-view-cart-button")
-    public static WebElement GO_TO_CART_BUTTON;
+    private static WebElement GO_TO_CART_BUTTON;
 
     public SelectedItemPage(WebDriver driver) {
         this.driver = driver;

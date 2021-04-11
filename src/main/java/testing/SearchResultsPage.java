@@ -11,7 +11,7 @@ public class SearchResultsPage extends BasePage{
     static final String ITEM_NAME = "LEGO Technic Liebherr R 9800 Excavator 42100 Building Kit (4,108 Pieces)";
 
     @FindBy(linkText = ITEM_NAME)
-    public static WebElement EXPECTED_ITEM;
+    private static WebElement EXPECTED_ITEM;
 
     public SearchResultsPage(WebDriver driver){
         this.driver = driver;

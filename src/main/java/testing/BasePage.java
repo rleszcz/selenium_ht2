@@ -13,27 +13,28 @@ import java.time.Duration;
 public class BasePage extends Page {
     protected WebDriver driver;
 
-    protected void clickOnElement(WebElement element){
+    protected void clickOnElement(WebElement element) {
         Actions actions = new Actions(driver);
         actions.click(element).perform();
     }
 
-    protected void enterTextIntoField(WebElement element, String text){
+    protected void enterTextIntoField(WebElement element, String text) {
         Actions actions = new Actions(driver);
         actions.sendKeys(element, text).perform();
     }
-    protected void openWebPage(String url){
+
+    protected void openWebPage(String url) {
         driver.navigate().to(url);
     }
 
-    protected void pressKey(Keys key){
+    protected void pressKey(Keys key) {
         Actions actions = new Actions(driver);
         actions.sendKeys(key).perform();
     }
 
-    public WebElement waitToBeClickable(WebElement element, WebDriver driver){
+    protected WebElement waitToBeClickable(WebElement element, WebDriver driver) {
         WebElement visibleElement = null;
-        try{
+        try {
             visibleElement = new WebDriverWait(driver, Duration.ofSeconds(3), Duration.ofSeconds(1))
                     .until(ExpectedConditions.elementToBeClickable(element));
         } catch (Exception e) {
@@ -42,9 +43,9 @@ public class BasePage extends Page {
         return visibleElement;
     }
 
-    public WebElement waitToBeVisible(WebElement element, WebDriver driver){
+    protected WebElement waitToBeVisible(WebElement element, WebDriver driver) {
         WebElement visibleElement = null;
-        try{
+        try {
             visibleElement = new WebDriverWait(driver, Duration.ofSeconds(3), Duration.ofSeconds(1))
                     .until(ExpectedConditions.visibilityOf(element));
         } catch (Exception e) {

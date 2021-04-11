@@ -10,10 +10,10 @@ import org.openqa.selenium.support.ui.Select;
 public class LanguageAndCurrencySettingsPage extends BasePage{
 
     @FindBy(xpath = "//select[@id=\"icp-sc-dropdown\"]")
-    public static WebElement CURRENCY_DROPDOWN;
+    private static WebElement CURRENCY_DROPDOWN;
 
     @FindBy(xpath = "//input[@aria-labelledby=\"icp-btn-save-announce\"]")
-    public static WebElement SAVE_CHANGES_BUTTON;
+    private static WebElement SAVE_CHANGES_BUTTON;
 
     public LanguageAndCurrencySettingsPage(WebDriver driver){
         this.driver = driver;

@@ -12,22 +12,22 @@ public class HomePage extends BasePage {
     private static final String HOME_PAGE_URL = "https://www.amazon.com/";
 
     @FindBy(id = "twotabsearchtextbox")
-    public static WebElement SEARCH_FIELD;
+    private static WebElement SEARCH_FIELD;
 
     @FindBy(id = "nav-hamburger-menu")
-    public static WebElement SIDE_MENU_BUTTON;
+    private static WebElement SIDE_MENU_BUTTON;
 
     @FindBy(id = "nav-global-location-data-modal-action")
-    public static WebElement DELIVER_TO_BUTTON;
+    private static WebElement DELIVER_TO_BUTTON;
 
     @FindBy(xpath = "//select[@class=\"a-native-dropdown\"]")
-    public static WebElement COUNTRY_DROPDOWN;
+    private static WebElement COUNTRY_DROPDOWN;
 
     @FindBy(xpath = "//span[@class=\"a-declarative\"]")
-    public static WebElement DONE_BUTTON;
+    private static WebElement DONE_BUTTON;
 
     @FindBy(id = "icp-nav-flyout")
-    public static WebElement LANGUAGE_BUTTON;
+    private static WebElement LANGUAGE_BUTTON;
 
     public HomePage(WebDriver driver){
         this.driver = driver;

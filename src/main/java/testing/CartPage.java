@@ -9,7 +9,7 @@ import org.openqa.selenium.support.PageFactory;
 public class CartPage extends BasePage {
 
     @FindBy(xpath = "//div[@class=\"sc-list-item-content\"]")
-    public static WebElement ITEM_IN_CART;
+    private static WebElement ITEM_IN_CART;
 
     public CartPage(WebDriver driver) {
         this.driver = driver;
