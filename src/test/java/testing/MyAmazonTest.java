@@ -42,7 +42,6 @@ public class MyAmazonTest extends MyBasicTest {
 
     @Test
     public void changeDeliveryDestinationToAlbaniaTest() {
-        //in 2nd HT it was Poland, but it was changed to be a different country for both of us
         homePage.open()
                 .changeDeliveryDestination(SELECTED_COUNTRY)
                 .open(); //instead of waiting for the page to reload
