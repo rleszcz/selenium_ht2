@@ -43,8 +43,7 @@ public class MyAmazonTest extends MyBasicTest {
     @Test
     public void changeDeliveryDestinationToAlbaniaTest() {
         homePage.open()
-                .changeDeliveryDestination(SELECTED_COUNTRY)
-                .open(); //instead of waiting for the page to reload
+                .changeDeliveryDestination(SELECTED_COUNTRY);
         Assert.assertTrue(driver.findElement(By.xpath(COUNTRY_XPATH)).getText().contains(SELECTED_COUNTRY));
     }
 

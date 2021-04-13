@@ -2,6 +2,7 @@ package testing;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -17,7 +18,10 @@ public abstract class MyBasicTest {
     @BeforeMethod
     public void preparation() {
         System.setProperty("webdriver.chrome.driver", "driver/chromedriver.exe");
-        driver = new ChromeDriver();
+        ChromeOptions co = new ChromeOptions();
+        co.addArguments("--disable-geolocation");
+        co.addArguments("--incognito");
+        driver = new ChromeDriver(co);
         homePage = new HomePage(driver);
         searchResultsPage = new SearchResultsPage(driver);
         selectedItemPage = new SelectedItemPage(driver);

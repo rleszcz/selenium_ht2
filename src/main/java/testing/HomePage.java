@@ -6,7 +6,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class HomePage extends BasePage {
     private static final String HOME_PAGE_URL = "https://www.amazon.com/";
@@ -58,6 +62,7 @@ public class HomePage extends BasePage {
         clickOnElement(DELIVER_TO_BUTTON);
         new Select(waitToBeClickable(COUNTRY_DROPDOWN, driver)).selectByVisibleText(countryName);
         clickOnElement(DONE_BUTTON);
+        new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.textToBePresentInElement(DELIVER_TO_BUTTON, countryName));
         return this;
     }
 
